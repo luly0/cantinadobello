@@ -1,0 +1,366 @@
+/* ========================
+   VARIÁVEIS DE CORES
+========================== */
+:root {
+  --vermelho: #b4162c;
+  --vermelho-escuro: #891121;
+  --preto: #19191c;
+  --branco: #fff;
+  --cinza-claro: #f4f4f7;
+  --cinza: #e3e3e6;
+  --shadow: 0 4px 16px rgba(33,19,19,.07);
+}
+
+/* ========================
+   ESTILO GLOBAL
+========================== */
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: var(--cinza-claro);
+  color: var(--preto);
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* ========================
+   HERO SECTION
+========================== */
+.hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('https://images.unsplash.com/photo-1519866981160-1f4e524e3d0c?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+}
+.hero-overlay {
+  content: "";
+  background: rgba(33,19,19,0.65);
+  position: absolute;
+  inset: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: var(--branco);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+.hero h1 {
+  font-family: 'Montserrat', 'Inter', Arial, sans-serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: .9rem;
+}
+.hero p {
+  font-size: 1.26rem;
+  font-weight: 400;
+  margin-bottom: 2.2rem;
+}
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-block;
+  padding: .55em 1.3em;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: background .18s, color .18s, box-shadow .18s, transform .14s;
+  box-shadow: var(--shadow);
+  border: none;
+}
+.btn.primary {
+  background: var(--vermelho);
+  color: var(--branco);
+}
+.btn.primary:hover,
+.btn.primary:focus-visible {
+  background: var(--vermelho-escuro);
+  transform: scale(1.03);
+}
+.btn.whatsapp {
+  background: #25d366;
+  color: var(--preto);
+}
+.btn.whatsapp:hover,
+.btn.whatsapp:focus-visible {
+  background: #1ebea5;
+}
+.btn.big {
+  font-size: 1.18rem;
+  padding: .7em 2em;
+  margin-top: 1.1rem;
+}
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 1.6rem; }
+  .hero p { font-size: 1rem; }
+}
+
+/* ========================
+   SEÇÃO CONTAINER
+========================== */
+.container {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 2.3rem 1.15rem;
+  box-sizing: border-box;
+}
+section:not(.hero) h2 {
+  font-family: 'Montserrat', 'Inter', Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--vermelho);
+  margin-bottom: 1.6rem;
+  letter-spacing: .5px;
+}
+
+/* ========================
+   SOBRE O RESTAURANTE
+========================== */
+.sobre p {
+  color: var(--preto);
+  margin-bottom: 1.6rem;
+}
+.destaques {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  margin-bottom: .4rem;
+}
+.destaques li {
+  background: var(--vermelho-escuro);
+  color: var(--branco);
+  border-radius: 5px;
+  padding: .7rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 1px 6px rgba(33,19,19,.05);
+}
+
+/* ========================
+   CARDÁPIO DESTAQUE
+========================== */
+.cardapio .menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.menu-items .item {
+  background: var(--branco);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 1.6rem 1rem;
+  min-width: 190px;
+  max-width: 210px;
+  flex: 1 1 190px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow .22s, transform .22s;
+}
+.menu-items .item:hover {
+  box-shadow: 0 6px 36px rgba(33,19,19,.15);
+  transform: translateY(-4px) scale(1.04);
+}
+.menu-items h3 {
+  font-size: 1.09rem;
+  font-weight: 700;
+  margin-top: .6rem;
+  color: var(--vermelho-escuro);
+  letter-spacing: .6px;
+}
+/* Imagens de comida (troque para fotos reais ou svg) */
+.img-holder {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-color: var(--cinza);
+  border-radius: 50%;
+  margin-bottom: .8rem;
+  box-shadow: 0 2px 10px rgba(33,19,19,.09);
+  background-size: cover;
+  background-position: center;
+}
+.pastel { background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=60&q=60'); }
+.pizza-portuguesa { background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=60&q=60'); }
+.pizza-frango { background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=60&q=60'); }
+.xsalada { background-image: url('https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=60&q=60'); }
+.prato-feito { background-image: url('https://images.unsplash.com/photo-1519866981160-1f4e524e3d0c?auto=format&fit=crop&w=60&q=60'); }
+
+@media (max-width: 800px) {
+  .menu-items .item {
+    min-width: 150px;
+    max-width: 99vw;
+    padding: 1rem .6rem;
+  }
+}
+
+/* ========================
+   GALERIA DE FOTOS
+========================== */
+.galeria .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(156px, 1fr));
+  gap: .75rem;
+  margin-top: .9rem;
+}
+.gallery-grid img {
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  transition: transform .18s, box-shadow .18s;
+}
+.gallery-grid img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 26px rgba(33,19,19,.14);
+}
+
+/* ========================
+   AVALIAÇÕES
+========================== */
+.avaliacoes .rating {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  font-size: 1.23rem;
+  margin-bottom: 1rem;
+}
+.avaliacoes .star {
+  font-size: 2rem;
+  color: gold;
+}
+.avaliacoes .rating-num {
+  color: var(--vermelho-escuro);
+  font-weight: 700;
+}
+.avaliacoes .base {
+  color: var(--preto);
+  font-weight: 400;
+  font-size: .95rem;
+}
+.comments blockquote {
+  font-style: italic;
+  color: var(--preto);
+  background: var(--cinza-claro);
+  border-left: 4px solid var(--vermelho-escuro);
+  padding-left: .8rem;
+  margin-bottom: .8rem;
+}
+.comments blockquote:last-child {
+  margin-bottom: 0;
+}
+
+/* ========================
+   LOCALIZAÇÃO
+========================== */
+.localizacao p {
+  margin-bottom: 1.2rem;
+}
+.mapa {
+  border: 4px solid var(--vermelho-escuro);
+  border-radius: 11px;
+  overflow: hidden;
+  max-width: 530px;
+  margin: 0 auto;
+  box-shadow: var(--shadow);
+}
+.mapa iframe {
+  width: 100%;
+  height: 240px;
+  border: none;
+}
+
+/* ========================
+   CONTATO
+========================== */
+.contato a.btn.whatsapp.big {
+  display: inline-block;
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+  font-size: 1.16rem;
+}
+.contato p {
+  font-size: 1.09rem;
+  margin-bottom: .9rem;
+}
+.contato a {
+  color: var(--vermelho);
+}
+
+/* ========================
+   FOOTER
+========================== */
+footer {
+  background: var(--preto);
+  color: var(--branco);
+  text-align: center;
+  padding: 2rem 1.15rem 1rem 1.15rem;
+  font-size: 1rem;
+  letter-spacing: .3px;
+}
+
+/* ========================
+   ANIMAÇÕES ENTRADA
+========================== */
+section:not(.hero) {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: .7s cubic-bezier(.47,1.64,.41,0.83);
+}
+section:not(.hero).visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ========================
+   MOBILE FIRST
+========================== */
+@media (max-width: 600px) {
+  .container {
+    padding: 1.2rem .4rem;
+  }
+  section:not(.hero) h2 {
+    font-size: 1.1rem;
+    margin-bottom: .9rem;
+  }
+  .destaques {
+    gap: .5rem;
+    flex-direction: column;
+  }
+  .menu-items {
+    gap: .5rem;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: .44rem;
+  }
+  .gallery-grid img {
+    height: 90px;
+  }
+  .mapa {
+    max-width: 98vw;
+  }
+  .avaliacoes .rating {
+    font-size: 1rem;
+  }
+  .comments blockquote {
+    padding-left: .38rem;
+    font-size: .98rem;
+  }
+}
